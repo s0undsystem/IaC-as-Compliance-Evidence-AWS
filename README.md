@@ -1,9 +1,9 @@
-# compliant-s3
+# IaC as Compliance Evidence
 
 Purpose: A reviewed, signed, immutably-stored Terraform commit is stronger evidence than a screenshot. This lab builds the vault that holds your evidence and the script that puts it there.
 
 Architecture:
-   Lab 2.3 workspace                capture-evidence.sh                 Object Lock vault
+   s3 workspcae                capture-evidence.sh                 Object Lock vault
    ─────────────────                ───────────────────                 ─────────────────
    tfplan, terraform/      ──▶      collect plan.json,        ──▶      s3://VAULT/runs/RUN_ID/
    .tf files, git log               state.json, commit.txt             bundle.tar.gz
